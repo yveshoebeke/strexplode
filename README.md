@@ -16,9 +16,12 @@ Splits a string into an array of strings according to given delimeter.
 
 ```shell
 mkdir {your_directory_of_choice}
-git pull -u github.com/yveshoebeke/strexplode
+cd {your_directory_of_choice}
+git clone https://github.com/yveshoebeke/strexplode
+cd strexplode
 make
 ```
+<sup>Note: strexpode_test will be invoked. Altered at your whim.</sup>
 
 Move ```strexplode.h``` to your local C library or in your project directory and act accordingly.
 
