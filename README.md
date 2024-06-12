@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <h1><img src="docs/strexplode.png" style="height:60px;width:50px;float:left;"/>&nbsp;&nbsp;String Explode</h1>
-=======
-<h1><img src="docs/strexplode.jpeg" style="height:70px;width:50px;float:left;"/>&nbsp;&nbsp;String Explode</h1>
->>>>>>> a04e4aa1d2be48b489493f6daac7beed2abc1f9b
 
 ## Splitting a string in C
 
