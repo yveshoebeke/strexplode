@@ -1,4 +1,4 @@
-<h1><img src="docs/strexplode.jpeg" style="height:50px;width:50px;float:left;"/>&nbsp;&nbsp;String Explode</h1>
+<h1><img src="docs/strexplode.jpeg" style="height:60px;width:30px;float:left;"/>&nbsp;&nbsp;String Explode</h1>
 
 ## Splitting a string in C
 
