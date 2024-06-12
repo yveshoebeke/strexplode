@@ -21,7 +21,7 @@ git clone https://github.com/yveshoebeke/strexplode
 cd strexplode
 make
 ```
-<sup>Note: strexpode_test will be invoked. Altered at your whim.</sup>
+<sup>Note: strexpode_test will be invoked. Alter at your whim.</sup>
 
 Move ```strexplode.h``` to your local C library or in your project directory and act accordingly.
 
