@@ -54,7 +54,7 @@ char** = strexplode(*char, char, *int)
 
 ### Run
 
-The run the given test program (```strexplode_test.c```); in the directory you placed do this:
+To run the given test program (```strexplode_test.c```); in the directory you placed do this:
 
 ```shell
 make
