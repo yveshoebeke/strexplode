@@ -12,16 +12,16 @@ Splits a string into an array of strings according to given delimeter.
 
 ### Install
 
-[rework this]
-
 ```shell
 mkdir {your_directory_of_choice}
 cd {your_directory_of_choice}
 git clone https://github.com/yveshoebeke/strexplode
 cd strexplode
 make
+./strexplode_test
 ```
-<sup>Note: strexpode_test will be invoked. Alter at your whim.</sup>
+
+<sup>Note: strexpode_test can now be invoked. See Example, below.</sup>
 
 Move ```strexplode.h``` to your local C library or in your project directory and direct compiler accordingly.
 
@@ -40,6 +40,8 @@ int word_count;
 char** result = strexplode(astring, delimeter, &word_count);
 ```
 
+Also see ```strexplode_test.c``` as an example.
+
 ---
 
 ### Signature
@@ -52,10 +54,11 @@ char** = strexplode(*char, char, *int)
 
 ### Run
 
-In the directory you placed do this:
+The run the give test program (```strexplode_test.c```); in the directory you placed do this:
 
 ```shell
 make
+./strexplode
 ```
 
 ---
@@ -70,9 +73,9 @@ They are, in order:
 1. the delimeter where to split the subject string (```char```)
 1. word count (```int*```)
 
+---
 
-### More Info/Details
+### Results
 
-See [later]
-
-___
+1. The function will return the result in an array of strings.
+1. The provided 3'rd argument will contain the number of elements in the resulting array.
