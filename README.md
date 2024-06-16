@@ -23,7 +23,7 @@ make
 ```
 <sup>Note: strexpode_test will be invoked. Alter at your whim.</sup>
 
-Move ```strexplode.h``` to your local C library or in your project directory and act accordingly.
+Move ```strexplode.h``` to your local C library or in your project directory and direct compiler accordingly.
 
 ---
 
