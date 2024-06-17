@@ -3,11 +3,11 @@
 
 int main() {
     // parameters for the function
-    char* instring = "  now the time has come for all   good   men to come to the aid of their country";
+    char* instring = "  now the time has come for all   good   men to come to the aid of their country ";
     char delimiter = ' ';
     int word_count;
     // show it to the people
-    printf("Given:\nSubject string: `%s`\n(note: sequential delimiters)\ndelimiter: `%c`\n\nResult:\n\n", instring, delimiter);
+    printf("Given:\nSubject string: `%s`\n(note: starting, ending and sequential delimiters)\ndelimiter: `%c`\n\nResult:\n\n", instring, delimiter);
     // do it
     char** result = strexplode(instring, delimiter, &word_count);
     // show the result

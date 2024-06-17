@@ -31,9 +31,6 @@ char** strexplode(char* string, char delimiter, int* count) {
         }
     }
 
-    // set return count [see issues]
-    *count = word_count + 1;
-
     // allocate mem for result array for number of elements (words) found.
     result = (char**)malloc((word_count + 1) * sizeof(char*));
     if (result == NULL) {
@@ -67,6 +64,17 @@ char** strexplode(char* string, char delimiter, int* count) {
     }
 
     free(buffer);
+
+    // set return count [see issues]
+    if(result[0] == NULL){
+        // [ISSUE 1]
+        *count = 0;
+    } else if(result[word_count] == NULL) {
+        // [ISSUE 2]
+        *count = word_count;
+    } else {
+        *count = word_count + 1;
+    }
 
     return result;
 }

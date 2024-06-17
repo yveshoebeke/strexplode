@@ -76,5 +76,14 @@ They are, in order:
 
 ### Results
 
-1. The function will return the result in an array of strings.
+1. The function will return the result in an array of strings (char**).
 1. The provided 3'rd argument will contain the number of elements in the resulting array.
+
+---
+
+### Issues
+
+1. There are 2 open issues, see [here](https://github.com/yveshoebeke/strexplode/issues).
+1. They do not impact the result.
+
+---
