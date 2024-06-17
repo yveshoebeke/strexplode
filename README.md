@@ -10,7 +10,7 @@ Splits a string into an array of strings according to given delimeter.
 
 ---
 
-### Install
+### Install and Run test
 
 ```shell
 mkdir {your_directory_of_choice}
@@ -18,7 +18,6 @@ cd {your_directory_of_choice}
 git clone https://github.com/yveshoebeke/strexplode
 cd strexplode
 make
-./strexplode_test
 ```
 
 <sup>Note: strexpode_test can now be invoked. See Example, below.</sup>
