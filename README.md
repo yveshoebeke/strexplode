@@ -1,4 +1,4 @@
-<h1><img src="docs/string_explode.png" style="height:60px;width:60px;float:left;"/>&nbsp;&nbsp;String Explode</h1>
+<h1><img src="docs/string_explode.png" style="height:30px;width:30px;float:left;"/>&nbsp;&nbsp;String Explode</h1>
 
 ## Splitting a string in C
 
@@ -22,7 +22,7 @@ make
 
 <sup>Note: strexpode_test can now be invoked. See Example, below.</sup>
 
-Move ```strexplode.h``` to your local C library or in your project directory and direct compiler accordingly.
+Move ```strexplode.h``` to your local C library or in your project directory and indicate this to your compiler accordingly.
 
 ---
 
