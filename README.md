@@ -4,9 +4,9 @@
 
 ### General
 
-Splits a string into an array of strings according to given delimeter.
+Splits a string into an array of elements according to given delimeter.
 
-<sup>(Note: In case you're wondering the choice of name. Once upon a long time ago I, out of necessity, was a somewhat prolific PHP programmer (hence the elephant in the room...); and I like the way this function is phrased, it sort of acurately describes it. Others will opine differently, I'm sure)</sup>
+<sup>(Note: In case you are wondering about the choice of name. Once upon a long time ago I, out of necessity, was a somewhat prolific PHP programmer (hence the elephant in the room...); and I liked the way this function is named, it sort of acurately describes it. Others will opine differently, I'm sure)</sup>
 
 ---
 
@@ -17,10 +17,10 @@ mkdir {your_directory_of_choice}
 cd {your_directory_of_choice}
 git clone https://github.com/yveshoebeke/strexplode
 cd strexplode
-make
+make compile
 ```
 
-<sup>Note: strexpode_test can now be invoked. See Example, below.</sup>
+<sup>Note: ```strexpode_test``` can now be invoked. See Example, below.</sup>
 
 Move ```strexplode.h``` to your local C library or in your project directory and indicate this to your compiler accordingly.
 
@@ -30,7 +30,7 @@ Move ```strexplode.h``` to your local C library or in your project directory and
 
 Add ```#include "strexplode.h"``` to your source file.
 
-In your source add something along this:
+In your source add something along these lines:
 
 ```C
 char *astring = "this is a simple string";
@@ -39,7 +39,7 @@ int word_count;
 char** result = strexplode(astring, delimeter, &word_count);
 ```
 
-Also see ```strexplode_test.c``` as an example.
+Reference ```strexplode_test.c``` as an example.
 
 ---
 
@@ -47,17 +47,6 @@ Also see ```strexplode_test.c``` as an example.
 
 ```C
 char** = strexplode(*char, char, *int)
-```
-
----
-
-### Run
-
-To run the given test program (```strexplode_test.c```); in the directory you placed do this:
-
-```shell
-make
-./strexplode_test
 ```
 
 ---
@@ -74,6 +63,23 @@ They are, in order:
 
 ---
 
+### Run
+
+To run the included test ```strexplode_test.c``` in the directory you cloned this in:
+
+```shell
+make compile
+./strexplode_test
+```
+
+or just:
+
+```shell
+make
+```
+
+---
+
 ### Results
 
 1. The function will return the result in an array of strings (char**).
@@ -84,6 +90,6 @@ They are, in order:
 ### Issues
 
 1. There are 2 open issues, see [here](https://github.com/yveshoebeke/strexplode/issues).
-1. They do not impact the result.
+1. They do not impact the validity of the result.
 
 ---
