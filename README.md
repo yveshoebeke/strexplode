@@ -65,7 +65,7 @@ They are, in order:
 
 ### Run
 
-To run the included test ```strexplode_test.c``` in the directory you cloned this:
+To run the included test ```strexplode_test.c``` in the directory you cloned this in:
 
 ```shell
 make compile
