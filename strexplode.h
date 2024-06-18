@@ -32,7 +32,7 @@ char** strexplode(char* string, char delimiter, int* count) {
     }
 
     // allocate mem for result array for number of elements (words) found.
-    result = (char**)malloc((word_count + 1) * sizeof(char*));
+    result = (char**)malloc(word_count * sizeof(char*));
     if (result == NULL) {
         fprintf(stderr, "Result array - Memory allocation failed\n");
         free(buffer);
