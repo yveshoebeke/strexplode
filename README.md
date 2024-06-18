@@ -6,7 +6,12 @@
 
 Splits a string into an array of elements according to given delimeter.
 
-<sup>(Note: In case you are wondering about the choice of name. Once upon a long time ago I, out of necessity, was a somewhat prolific PHP programmer (hence the elephant in the room...); and I liked the way this function is named, it sort of acurately describes it. Others will opine differently, I'm sure)</sup>
+Some case uses:
+
+- Transform a comma separated string to an array.
+- Put all words of a text into an array.
+
+<sup>Note: Both these potential use cases are examplified in the test (```strexplode_test.c```) routine.</sup>
 
 ---
 
@@ -15,12 +20,15 @@ Splits a string into an array of elements according to given delimeter.
 ```shell
 mkdir {your_directory_of_choice}
 cd {your_directory_of_choice}
-git clone https://github.com/yveshoebeke/strexplode
-cd strexplode
-make compile
 ```
 
-<sup>Note: ```strexpode_test``` can now be invoked. See Example, below.</sup>
+```shell
+git clone https://github.com/yveshoebeke/strexplode
+cd strexplode
+make
+```
+
+<sup>Note: - ```strexpode_test``` can now be invoked. See Example, below. - To compile only: ```make compile```</sup>
 
 Move ```strexplode.h``` to your local C library or in your project directory and indicate this to your compiler accordingly.
 
@@ -93,3 +101,51 @@ make
 1. They do not impact the validity of the result.
 
 ---
+
+### Example
+
+Output of ```strexplode_test``` here:
+
+```shell
+./strexplode_test
+Example 1:
+Separate all words in a string into an array:
+Given:
+- Subject string: '  now the time has come for all   good   men to come to the aid of their country ' (note: starting, ending and sequential delimiters)
+- Delimiter: ' '
+- Result:
+word count: 17
+[0] 'now'
+[1] 'the'
+[2] 'time'
+[3] 'has'
+[4] 'come'
+[5] 'for'
+[6] 'all'
+[7] 'good'
+[8] 'men'
+[9] 'to'
+[10] 'come'
+[11] 'to'
+[12] 'the'
+[13] 'aid'
+[14] 'of'
+[15] 'their'
+[16] 'country'
+
+Example 2:
+Comma separated list to an array:
+Given:
+- Subject string: 'Boeing,Airbus,Piper,Cessna,Beechcraft,Diamond Aircraft'
+- Delimiter: ','
+- Result:
+array element count: 6
+[0] 'Boeing'
+[1] 'Airbus'
+[2] 'Piper'
+[3] 'Cessna'
+[4] 'Beechcraft'
+[5] 'Diamond Aircraft'
+
+done
+```
