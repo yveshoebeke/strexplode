@@ -11,7 +11,7 @@ Some case uses:
 - Transform a comma separated string to an array.
 - Put all words of a text into an array.
 
-<sup>Note: Both these potential use cases are examplified in the test (```strexplode_test.c```) routine.</sup>
+<sup>Note: Both these potential use cases are illustrated in the test (```strexplode_test.c```) program.</sup>
 
 ---
 
