@@ -111,7 +111,8 @@ Output of ```strexplode_test``` here:
 Example 1:
 Separate all words in a string into an array:
 Given:
-- Subject string: '  now the time has come for all   good   men to come to the aid of their country ' (note: starting, ending and sequential delimiters)
+- Subject string: '  now the time has come for all   good   men to come to the aid of their country '
+(note: starting, ending and sequential/duplicated delimiters are eliminated)
 - Delimiter: ' '
 - Result:
 word count: 17
@@ -136,16 +137,20 @@ word count: 17
 Example 2:
 Comma separated list to an array:
 Given:
-- Subject string: 'Boeing,Airbus,Piper,Cessna,Beechcraft,Diamond Aircraft'
+- Subject string: 'McDonnell Douglas,Airbus,Piper,Boeing,Embraer,Bombardier Aerospace,Cessna,Beechcraft,Grumman,Lockheed'
 - Delimiter: ','
 - Result:
-array element count: 6
-[0] 'Boeing'
+array element count: 10
+[0] 'McDonnell Douglas'
 [1] 'Airbus'
 [2] 'Piper'
-[3] 'Cessna'
-[4] 'Beechcraft'
-[5] 'Diamond Aircraft'
+[3] 'Boeing'
+[4] 'Embraer'
+[5] 'Bombardier Aerospace'
+[6] 'Cessna'
+[7] 'Beechcraft'
+[8] 'Grumman'
+[9] 'Lockheed'
 
 done
 ```

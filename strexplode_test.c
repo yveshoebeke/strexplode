@@ -1,16 +1,17 @@
 #include <stdio.h>
 #include "strexplode.h"
 
-int main() {
+int main(void) {
     // parameters for the function
     char* instring = "  now the time has come for all   good   men to come to the aid of their country ";
     char delimiter = ' ';
-    char* commaseparated = "Boeing,Airbus,Piper,Cessna,Beechcraft,Diamond Aircraft";
+
+    char* commaseparated = "McDonnell Douglas,Airbus,Piper,Boeing,Embraer,Bombardier Aerospace,Cessna,Beechcraft,Grumman,Lockheed";
     int word_count;
 
     // show it to the people
     printf("Example 1:\nSeparate all words in a string into an array:\n");
-    printf("Given:\n- Subject string: `%s` (note: starting, ending and sequential delimiters)\n- Delimiter: `%c`\n- Result:\n", instring, delimiter);
+    printf("Given:\n- Subject string: `%s`\n(note: starting, ending and sequential/duplicated delimiters are eliminated)\n- Delimiter: `%c`\n- Result:\n", instring, delimiter);
     // do it
     char** result = strexplode(instring, delimiter, &word_count);
     // show the result
@@ -20,7 +21,7 @@ int main() {
     }
 
     // show comma separated to array
-    printf("\nExample 2:\nComma separated list to an array:\n");
+    printf("\nExample 2:\nComma separated list to array:\n");
     printf("Given:\n- Subject string: `%s`\n- Delimiter: `%c`\n- Result:\n", commaseparated, ',');
     result = strexplode(commaseparated, ',', &word_count);
     // show the result

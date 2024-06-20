@@ -1,21 +1,39 @@
-#ifndef _STREXPLODE_H_
-#define _STREXPLODE_H_
-
+#ifndef STREXPLODE_H
+#define STREXPLODE_H
+/*
++-------------------------------------------------------------------------------+    
+|                                                                               |
+|    strexplode.h                                                               |
+|                                                                               |
+|    Splits a string into an array.                                             |
+|                                                                               |
+|    repository    - https://github.com/yveshoebeke/strexplode                  |
+|    license       - https://github.com/yveshoebeke/strexplode/blob/LICENSE     |
+|    documentation - https://github.com/yveshoebeke/strexplode/wiki             |
+|                                                                               |
+|    author        - Yves Hoebeke                                               |
+|    email         - yves.hoebeke@bytesupply.com                                |
+|    web           - https://yveshoebeke.github.io                              |
+|                                                                               |
+|    date: 19-07-2024                                                           |
+|                                                                               |
++-------------------------------------------------------------------------------+    
+*/
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 
-#define DELIMITERS_ALLOWED 2
+#define DELIMITERS_CONSIDERED 2
 
-char** strexplode(char* string, char delimiter, int* count) {
+char** strexplode(char* instring, char delimiter, int* count) {
     char** result;
     char* buffer;
-    char delimiters[DELIMITERS_ALLOWED] = {delimiter, '\0'};
-    const unsigned int subject_length = strlen(string);
+    char delimiters[DELIMITERS_CONSIDERED] = {delimiter, '\0'};
+    const unsigned long Subject_Length = strlen(instring) * sizeof(char);
     unsigned int word_count = 0, result_idx = 0, buffer_idx = 0;
 
     // set subject string length bytes aside for work buffer (to be freed later)
-    buffer = (char*)malloc(subject_length * sizeof(char));
+    buffer = (char*)malloc(Subject_Length);
     if (buffer == NULL) {
         fprintf(stderr, "Buffer - Memory allocation failed\n");
         *count = -1;
@@ -23,9 +41,9 @@ char** strexplode(char* string, char delimiter, int* count) {
     }
 
     // get word count
-    for(int i = 0; i < strlen(string); i++){
-        if(string[i] == delimiters[0] || string[i] == delimiters[1]) {
-            if(i > 0 && string[i-1] != delimiters[0]){
+    for(int i = 0; i < strlen(instring); i++){
+        if(instring[i] == delimiters[0] || instring[i] == delimiters[1]) {
+            if(i > 0 && instring[i-1] != delimiters[0]){
                 word_count += 1;
             }
         }
@@ -41,9 +59,9 @@ char** strexplode(char* string, char delimiter, int* count) {
     }
 
     // allocate mem for each word element (and commit value) to result array.
-    for(int i = 0; i < strlen(string) + 1; i++){
-        if(string[i] != delimiters[0] && string[i] != delimiters[1]) {
-            buffer[buffer_idx++] = string[i];
+    for(int i = 0; i < strlen(instring) + 1; i++){
+        if(instring[i] != delimiters[0] && instring[i] != delimiters[1]) {
+            buffer[buffer_idx++] = instring[i];
         } else {
             buffer[buffer_idx] = 0;
             // skip if nothing in buffer, occurs when sequential delimiters are present.
@@ -79,4 +97,4 @@ char** strexplode(char* string, char delimiter, int* count) {
     return result;
 }
 
-#endif /* _STREXPLODE_H_ */
+#endif /* STREXPLODE_H */
