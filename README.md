@@ -30,7 +30,7 @@ make
 
 <sup>Note: - ```strexpode_test``` can now be executed. See Example, below. - To compile only: ```make compile```</sup>
 
-Move ```strexplode.h``` to your local C library or in your project directory and indicate this to your compiler accordingly.
+Move ```strexplode.h``` to your local C library or your project locale. Flag this to your compiler accordingly.
 
 ---
 
@@ -55,7 +55,7 @@ Reference ```strexplode_test.c``` as an example.
 ### Signature
 
 ```C
-int = strexplode(**char, *char, char)
+int strexplode(**char, *char, char)
 ```
 
 ---
@@ -97,14 +97,14 @@ make
 
 ### Errors
 
-1. The function will return ```-1``` and print an error message to ```stderr``` if it could not complete its process.
+1. A return of ```-1``` indicates failure. An error message will be printed to ```stderr```
 
 ---
 
 ### Issues
 
 1. There are 2 open issues, see [here](https://github.com/yveshoebeke/strexplode/issues).
-1. These issues do not impact the validity of the result (it's just something tht annoys me).
+1. These issues do not impact the validity of the result (it's just something that annoys me).
 
 ---
 
