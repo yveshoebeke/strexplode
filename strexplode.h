@@ -6,6 +6,8 @@
 |    strexplode.h                                                               |
 |                                                                               |
 |    Splits a string into an array.                                             |
+|       - params: address to resulting char array, subject string, delimiter.   |
+|       - returns number of elements in resulting array.                        |
 |                                                                               |
 |    repository    - https://github.com/yveshoebeke/strexplode                  |
 |    license       - https://github.com/yveshoebeke/strexplode/blob/LICENSE     |
@@ -25,7 +27,7 @@
 
 #define DELIMITERS_CONSIDERED 2
 
-char** strexplode(char* instring, char delimiter, int* count) {
+int strexplode(char*** array_Object, char* instring, char delimiter) {
     char** result;
     char* buffer;
     char delimiters[DELIMITERS_CONSIDERED] = {delimiter, '\0'};
@@ -35,9 +37,8 @@ char** strexplode(char* instring, char delimiter, int* count) {
     // set subject string length bytes aside for work buffer (to be freed later)
     buffer = (char*)malloc(Subject_Length);
     if (buffer == NULL) {
-        fprintf(stderr, "Buffer - Memory allocation failed\n");
-        *count = -1;
-        return result;
+        fprintf(stderr, "buffer - memory allocation failed\n");
+        return -1;
     }
 
     // get word count
@@ -49,14 +50,16 @@ char** strexplode(char* instring, char delimiter, int* count) {
         }
     }
 
-    // allocate mem for result array for number of elements (words) found.
-    result = (char**)malloc(word_count * sizeof(char*));
-    if (result == NULL) {
-        fprintf(stderr, "Result array - Memory allocation failed\n");
+    // allocate mem for result array for number of elements found.
+    *array_Object = (char**)calloc(word_count, sizeof(char**));
+    if (*array_Object == NULL) {
+        fprintf(stderr, "result array object - memory allocation failed\n");
         free(buffer);
-        *count = -1;
-        return result;
+        return -1;
     }
+
+    // move allocated array_object address to result var for processing.
+    result = *array_Object;
 
     // allocate mem for each word element (and commit value) to result array.
     for(int i = 0; i < strlen(instring) + 1; i++){
@@ -68,10 +71,9 @@ char** strexplode(char* instring, char delimiter, int* count) {
             if(strlen(buffer) > 0){
                 result[result_idx] = (char*)malloc(strlen(buffer) * sizeof(char));
                 if(result[result_idx] == NULL){
-                    fprintf(stderr, "Result array element - Memory allocation failed\n");
+                    fprintf(stderr, "result array element [%d] - memory allocation failed\n", result_idx);
                     free(buffer);
-                    *count = -1;
-                    return result;
+                    return -1;
                 }
                 strcpy(result[result_idx], buffer);
                 result_idx++;
@@ -83,18 +85,14 @@ char** strexplode(char* instring, char delimiter, int* count) {
 
     free(buffer);
 
-    // set return count [see issues]
+    // set return count [see issues https://github.com/yveshoebeke/strexplode/issues]
     if(result[0] == NULL){
-        // [ISSUE 1]
-        *count = 0;
+        return 0;
     } else if(result[word_count] == NULL) {
-        // [ISSUE 2]
-        *count = word_count;
-    } else {
-        *count = word_count + 1;
+        return word_count;
     }
 
-    return result;
+    return word_count + 1;
 }
 
 #endif /* STREXPLODE_H */
