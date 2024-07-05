@@ -11,7 +11,7 @@ Some case uses:
 - Transform a comma separated string to an array.
 - Put all words of a text into an array.
 
-<sup>Note: Both these potential use cases are illustrated in the test (```strexplode_test.c```) program.</sup>
+<sup>Note: Both of these potential use cases are illustrated in the test (```strexplode_test.c```) program.</sup>
 
 ---
 
@@ -28,7 +28,7 @@ cd strexplode
 make
 ```
 
-<sup>Note: - ```strexpode_test``` can now be invoked. See Example, below. - To compile only: ```make compile```</sup>
+<sup>Note: - ```strexpode_test``` can now be executed. See Example, below. - To compile only: ```make compile```</sup>
 
 Move ```strexplode.h``` to your local C library or in your project directory and indicate this to your compiler accordingly.
 
@@ -41,10 +41,11 @@ Add ```#include "strexplode.h"``` to your source file.
 In your source add something along these lines:
 
 ```C
+char** result;
 char *astring = "this is a simple string";
 char delimeter = ' ';
 int word_count;
-char** result = strexplode(astring, delimeter, &word_count);
+word_count = strexplode(&result, astring, delimeter);
 ```
 
 Reference ```strexplode_test.c``` as an example.
@@ -54,7 +55,7 @@ Reference ```strexplode_test.c``` as an example.
 ### Signature
 
 ```C
-char** = strexplode(*char, char, *int)
+int = strexplode(**char, *char, char)
 ```
 
 ---
@@ -65,9 +66,9 @@ There are 3 mandatory parameters.
 
 They are, in order:
 
+1. the address of the resulting array (```char**```)
 1. the subject string (```char*```)
 1. the delimeter where to split the subject string (```char```)
-1. word count (```int*```)
 
 ---
 
@@ -90,15 +91,20 @@ make
 
 ### Results
 
-1. The function will return the result in an array of strings (char**).
-1. The provided 3'rd argument will contain the number of elements in the resulting array.
+1. The function will return an int of the number of elements in the resulting array.
+
+---
+
+### Errors
+
+1. The function will return ```-1``` and print an error message to ```stderr``` if it could not complete its process.
 
 ---
 
 ### Issues
 
 1. There are 2 open issues, see [here](https://github.com/yveshoebeke/strexplode/issues).
-1. They do not impact the validity of the result.
+1. These issues do not impact the validity of the result (it's just something tht annoys me).
 
 ---
 
