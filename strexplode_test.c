@@ -7,7 +7,7 @@ int main(void) {
     char* instring = "  now the time has come for all   good   men to come to the aid of their country ";
     char delimiter = ' ';
 
-    char* commaseparated = "McDonnell Douglas,Airbus,Piper,Boeing,Embraer,Bombardier Aerospace,Cessna,Beechcraft,Grumman,Lockheed";
+    char* commaseparated = "McDonnell Douglas,Airbus,Piper,Boeing,,Embraer,Bombardier Aerospace,Cessna,Beechcraft,Grumman,Lockheed";
     int element_count;
 
     // show it to the people
