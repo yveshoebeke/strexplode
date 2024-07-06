@@ -112,6 +112,8 @@ make
 
 Output of ```strexplode_test``` here:
 
+<sup>Note: ```strexplode_longtest``` reads text from ```data/longtest.txt``` and performs a word count on it.</sup>
+
 ```shell
 ./strexplode_test
 Example 1:
