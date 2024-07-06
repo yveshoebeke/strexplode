@@ -37,7 +37,7 @@ int strexplode(char*** array_Object, char* instring, char delimiter) {
     // set subject string length bytes aside for work buffer (to be freed later)
     buffer = (char*)malloc(Subject_Length);
     if (buffer == NULL) {
-        fprintf(stderr, "buffer [%d bytes] - memory allocation failed\n", Subject_Length);
+        fprintf(stderr, "buffer [%lu bytes] - memory allocation failed\n", Subject_Length);
         return -1;
     }
 
@@ -53,7 +53,7 @@ int strexplode(char*** array_Object, char* instring, char delimiter) {
     // allocate mem for result array for number of elements found.
     *array_Object = (char**)calloc(word_count, sizeof(char**));
     if (*array_Object == NULL) {
-        fprintf(stderr, "result array object [%d bytes] - memory allocation failed\n", word_count * sizeof(char**));
+        fprintf(stderr, "result array object [%lu bytes] - memory allocation failed\n", word_count * sizeof(char**));
         free(buffer);
         return -1;
     }
@@ -71,7 +71,7 @@ int strexplode(char*** array_Object, char* instring, char delimiter) {
             if(strlen(buffer) > 0){
                 result[result_idx] = (char*)malloc(strlen(buffer) * sizeof(char));
                 if(result[result_idx] == NULL){
-                    fprintf(stderr, "result array element [index: %d][%d bytes] - memory allocation failed\n", result_idx, strlen(buffer) * sizeof(char));
+                    fprintf(stderr, "result array element [index: %d][%lu bytes] - memory allocation failed\n", result_idx, strlen(buffer) * sizeof(char));
                     free(buffer);
                     return -1;
                 }
