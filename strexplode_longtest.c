@@ -53,6 +53,8 @@ int main(void) {
     // do the splitting
     element_count = strexplode(&result_array, buffer, ' ');
     if(element_count == -1){
+        free(buffer);
+        free(result_array);
         return 1;
     }
 
@@ -62,6 +64,9 @@ int main(void) {
         if(i % 1000 == 0){ cr_to_continue(); }
         printf("[%d] `%s`\n", i, result_array[i]);
     }
+
+    free(buffer);
+    free(result_array);
 
     // that's it
     printf("\ndone\n");
