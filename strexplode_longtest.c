@@ -44,14 +44,14 @@ int main(void) {
     char* fname = "data/longtest.txt";
     unsigned long int size, bytesread, element_count;
     char* buffer;
-
+    
     // get size
     size = get_file_size(fname);
     bytesread = fill_buffer(fname, &buffer, size);
     printf("\nFile: [%s] - size: [%lu] - bytes read: [%lu]", fname, size, bytesread);
 
     // do the splitting
-    element_count = strexplode(&result_array, buffer, ' ');
+    element_count = strexplode(&result_array, buffer, " ");
     if(element_count == -1){
         free(buffer);
         free(result_array);
