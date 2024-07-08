@@ -7,12 +7,11 @@ int main(void) {
 
     // ========== part 1 ===========
     // show words (space separated)
-    char instring[] = "now is the time for all good men to come to the aid of their country";
+    char instring[] = "  now is the time for all     good men to come to the aid of their country ";
     char* delimiter = " ";
 
     printf("Example 1:\nSeparate all words in a string into an array:\n");
-    // printf("Given:\n- Subject string: `%s`\n(note: starting, ending and sequential/duplicated delimiters are eliminated)\n- Delimiter: `%s`\n- Result:\n", instring, delimiter);
-    printf("Given:\n- Subject string: `%s`\n- Delimiter: `%s`\n- Result:\n", instring, delimiter);
+    printf("Given:\n- Subject string: `%s`\n(note: starting, ending and sequential/duplicated delimiters are eliminated)\n- Delimiter: `%s`\n- Result:\n", instring, delimiter);
 
     // do it
     element_count = strexplode(&result_array, instring, delimiter);
