@@ -1,26 +1,26 @@
 #ifndef STREXPLODE_H
 #define STREXPLODE_H
-// /*
-// +-------------------------------------------------------------------------------+    
-// |                                                                               |
-// |    strexplode.h                                                               |
-// |                                                                               |
-// |    Splits a string into an array.                                             |
-// |       - params: address to resulting char array, subject string, delimiter.   |
-// |       - returns number of elements in resulting array.                        |
-// |                                                                               |
-// |    repository    - https://github.com/yveshoebeke/strexplode                  |
-// |    license       - https://github.com/yveshoebeke/strexplode/blob/LICENSE     |
-// |    documentation - https://github.com/yveshoebeke/strexplode/wiki             |
-// |                                                                               |
-// |    author        - Yves Hoebeke                                               |
-// |    email         - yves.hoebeke@bytesupply.com                                |
-// |    web           - https://yveshoebeke.github.io                              |
-// |                                                                               |
-// |    date: 19-07-2024                                                           |
-// |                                                                               |
-// +-------------------------------------------------------------------------------+    
-// */
+/*
++-------------------------------------------------------------------------------+    
+|                                                                               |
+|    strexplode.h                                                               |
+|                                                                               |
+|    Splits a string into an array.                                             |
+|       - params: address to resulting char array, subject string, delimiter.   |
+|       - returns number of elements in resulting array.                        |
+|                                                                               |
+|    repository    - https://github.com/yveshoebeke/strexplode                  |
+|    license       - https://github.com/yveshoebeke/strexplode/blob/LICENSE     |
+|    documentation - https://github.com/yveshoebeke/strexplode/wiki             |
+|                                                                               |
+|    author        - Yves Hoebeke                                               |
+|    email         - yves.hoebeke@bytesupply.com                                |
+|    web           - https://yveshoebeke.github.io                              |
+|                                                                               |
+|    date: 19-07-2024                                                           |
+|                                                                               |
++-------------------------------------------------------------------------------+    
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
