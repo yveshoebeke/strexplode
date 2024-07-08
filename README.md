@@ -43,7 +43,7 @@ In your source add something along these lines:
 ```C
 char** result;
 char astring[] = "this is a simple string";
-char delimeter = ' ';
+char* delimiter = " ";
 int word_count;
 word_count = strexplode(&result, astring, delimeter);
 ```
@@ -55,7 +55,7 @@ Reference ```strexplode_test.c``` as an example.
 ### Signature
 
 ```C
-int strexplode(**char, *char, char)
+int strexplode(**char, *char, *char)
 ```
 
 ---
@@ -76,12 +76,7 @@ They are, in order:
 
 To run the included test ```strexplode_test.c``` in the directory you cloned this in:
 
-```shell
-make compile
-./strexplode_test
-```
-
-or just:
+<sup>Note: - ```strexpode_longtest``` operates on ```data/longtest.txt``` (high volume sample) can also be executed. See Example, below (to compile only: ```make compile``` or ```make compile_longtest```).</sup>
 
 ```shell
 make
@@ -92,6 +87,7 @@ make
 ### Results
 
 1. The function will return an int of the number of elements in the resulting array.
+1. The provided address pointer to your result will contain the resulting array.
 
 ---
 
