@@ -112,7 +112,7 @@ make
 
 Output of ```strexplode_test``` here:
 
-<sup>Note: ```strexplode_longtest``` reads text from ```data/longtest.txt``` and performs a word count on it.</sup>
+<sup>Note: ```strexplode_longtest``` reads text from ```data/longtest.txt``` and performs a word count on it (```~27k+ words  ~170k+ bytes```).</sup>
 
 ```shell
 ./strexplode_test
@@ -159,6 +159,20 @@ array element count: 10
 [7] 'Beechcraft'
 [8] 'Grumman'
 [9] 'Lockheed'
+
+Example 3:
+Process multiple delimiters:
+Given:
+- Subject string: `This is a simple example string`
+- Delimiters: ` si`
+- Result:
+array element count: 6
+[0] `Th`
+[1] `a`
+[2] `mple`
+[3] `example`
+[4] `tr`
+[5] `ng`
 
 done
 ```
