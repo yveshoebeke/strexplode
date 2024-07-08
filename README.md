@@ -42,7 +42,7 @@ In your source add something along these lines:
 
 ```C
 char** result;
-char *astring = "this is a simple string";
+char astring[] = "this is a simple string";
 char delimeter = ' ';
 int word_count;
 word_count = strexplode(&result, astring, delimeter);
@@ -67,7 +67,7 @@ There are 3 mandatory parameters.
 They are, in order:
 
 1. the address of the resulting array (```char**```)
-1. the subject string (```char*```)
+1. the subject string --array-- (```char[]```)
 1. the delimeter where to split the subject string (```char```)
 
 ---
@@ -103,8 +103,8 @@ make
 
 ### Issues
 
-1. There are 2 open issues, see [here](https://github.com/yveshoebeke/strexplode/issues).
-1. These issues do not impact the validity of the result (it's just something that annoys me).
+1. 2 issues were resolved, see [here](https://github.com/yveshoebeke/strexplode/issues).
+1. 1 open issue how to resolve duplicate, and starting/ending position delimiters.
 
 ---
 
