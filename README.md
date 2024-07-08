@@ -67,7 +67,7 @@ There are 3 mandatory parameters.
 They are, in order:
 
 1. the address of the resulting array (```char**```)
-1. the subject string --array-- (```char[]```)
+1. the subject string **array** (```char[]```)
 1. the delimeter where to split the subject string (```char```)
 
 ---
