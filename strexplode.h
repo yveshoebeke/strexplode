@@ -25,29 +25,31 @@
 #include <stdlib.h>
 #include <string.h>
 
-int strexplode(char*** result_pntr, char instring[], char* delimiter){
+int strexplode(char*** result_pntr, char instring[], char* delimiters){
     char** result;
     char* element;
-    unsigned int index = 0, mem_cnt = 0;
+    unsigned int index = 0, mem_cnt = 0, count;
 
     // determine memory allocation for the result array by counting delimiters
     char* astring = instring;
-    for(mem_cnt = 0; astring[mem_cnt]; astring[mem_cnt] == delimiter[0] ? mem_cnt++ : *astring++);
-    mem_cnt += 1;
+    for(int i = 0; i < strlen(delimiters); i++){
+        for(count = 0; astring[count]; astring[count] == delimiters[i] ? count++ : *astring++);
+        mem_cnt += count;
+    }
 
     // allocate it
     *result_pntr = (char**)calloc(mem_cnt, sizeof(char**));
-    if(result_pntr == NULL){
-        fprintf(stderr, "`*result` memory allocation failed (%lu bytes)\n", mem_cnt * sizeof(char**));
+    if(*result_pntr == NULL){
+        fprintf(stderr, "`*result_pntr` memory allocation failed (%lu bytes)\n", mem_cnt * sizeof(char**));
         free(*result_pntr);
         return -1;
     }
 
-    // move allocated array_object address to result for processing.
+    // move allocated array address to result for processing.
     result = *result_pntr;
 
     // retrieve each element separated by the delimiter
-    while((element = strtok_r(instring, delimiter, &instring))){
+    while((element = strtok_r(instring, delimiters, &instring))){
         if(strlen(element) == 0){ 
             continue;
         }
