@@ -48,6 +48,9 @@ int strexplode(char*** result_pntr, char instring[], char* delimiter){
 
     // retrieve each element separated by the delimiter
     while((element = strtok_r(instring, delimiter, &instring))){
+        if(strlen(element) == 0){ 
+            continue;
+        }
         result[index] = (char*)malloc(strlen(element) * sizeof(char*));
         if(result[index] == NULL){
             fprintf(stderr, "`result[%d]` memory allocation failed (%lu bytes)\n", index, strlen(element) * sizeof(char*));
@@ -55,9 +58,7 @@ int strexplode(char*** result_pntr, char instring[], char* delimiter){
             return -1;
         }
         // push it up the result stack and update the index count
-        if(strlen(element) > 0){
-            strcpy(result[index++], element);
-        }
+        strcpy(result[index++], element);
     }
 
     return index;
