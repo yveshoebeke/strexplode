@@ -31,8 +31,8 @@ int strexplode(char*** result_pntr, char instring[], char* delimiters){
     unsigned int index = 0, mem_cnt = 0, count;
 
     // determine memory allocation for the result array by counting delimiters
-    char* astring = instring;
     for(int i = 0; i < strlen(delimiters); i++){
+        char* astring = instring;
         for(count = 0; astring[count]; astring[count] == delimiters[i] ? count++ : *astring++);
         mem_cnt += count;
     }
