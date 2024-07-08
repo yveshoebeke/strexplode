@@ -5,9 +5,9 @@ int main(void) {
     char** result_array;    // resulting array of elements
     int element_count;      // resulting number of elements
 
-    // ========== part 1 ===========
+    // ========== part 1 ==========
     // show words (space separated)
-    char instring[] = "  now is the time for all     good men to come to the aid of their country ";
+    char instring[] = "  now the time has come for all     good men to come to the aid of their country ";
     char* delimiter = " ";
 
     printf("Example 1:\nSeparate all words in a string into an array:\n");
@@ -22,6 +22,7 @@ int main(void) {
         printf("[%d] `%s`\n", i, result_array[i]);
     }
 
+
     // ========== part 2 ===========
     // show comma separated to array
     char commaseparated[] = "McDonnell Douglas,Airbus,Piper,Boeing,,Embraer,Bombardier Aerospace,Cessna,Beechcraft,Grumman,Lockheed";
@@ -31,6 +32,24 @@ int main(void) {
 
     // do it
     element_count = strexplode(&result_array, commaseparated, ",");
+
+    // show the result
+    printf("array element count: %d\n", element_count);
+    for(int i=0; i < element_count; i++){
+        printf("[%d] `%s`\n", i, result_array[i]);
+    }
+
+    // =========== part 3 =============
+    // show multiple delimiters process
+    char multipledelimiters[] = "This is a simple example string";
+    char* delimiters = " si";
+
+    printf("\nExample 3:\nProcess multiple delimiters:\n");
+    printf("Given:\n- Subject string: `%s`\n- Delimiters: `%s`\n- Result:\n", multipledelimiters, delimiters);
+
+    // do it
+    element_count = strexplode(&result_array, multipledelimiters, delimiters);
+
     // show the result
     printf("array element count: %d\n", element_count);
     for(int i=0; i < element_count; i++){
