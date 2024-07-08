@@ -55,7 +55,9 @@ int strexplode(char*** result_pntr, char instring[], char* delimiter){
             return -1;
         }
         // push it up the result stack and update the index count
-        strcpy(result[index++], element);
+        if(strlen(element) > 0){
+            strcpy(result[index++], element);
+        }
     }
 
     return index;

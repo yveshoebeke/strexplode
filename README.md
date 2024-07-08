@@ -67,7 +67,7 @@ There are 3 mandatory parameters.
 They are, in order:
 
 1. the address of the resulting array (```char**```)
-1. the subject string **array** (```char[]```)
+1. the subject string --array-- (```char[]```)
 1. the delimeter where to split the subject string (```char```)
 
 ---
@@ -103,8 +103,8 @@ make
 
 ### Issues
 
-1. 2 issues were resolved, see [here](https://github.com/yveshoebeke/strexplode/issues).
-1. 1 open issue how to resolve duplicate, and starting/ending position delimiters.
+1. ~~2 issues were resolved, see [here](https://github.com/yveshoebeke/strexplode/issues).~~
+1. ~~1 open issue how to resolve duplicate, and starting/ending position delimiters.~~
 
 ---
 
