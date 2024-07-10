@@ -1,7 +1,7 @@
 /*
 +-------------------------------------------------------------------------------+    
 |                                                                               |
-|    strexplode.h                                                               |
+|    strexplode.c                                                               |
 |                                                                               |
 |    Splits a string into an array.                                             |
 |       - params: address to resulting char array, subject string, delimiter.   |
