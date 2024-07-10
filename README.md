@@ -28,9 +28,9 @@ cd strexplode
 make
 ```
 
-<sup>Note: - ```strexpode_test``` can now be executed. See Example, below. - To compile only: ```make compile```</sup>
+<sup>Note: - ```strexpode_test``` can now be executed. See Example, below. - To compile only: ```make compile```. In addition ```strexplode_longtest``` (see Example below) will be compiled.</sup>
 
-Move ```strexplode.h``` to your local C library or your project locale. Flag this to your compiler accordingly.
+Move ```strexplode.h``` and ```strexplode.c``` to your local C library or project location. 
 
 ---
 
@@ -48,6 +48,12 @@ int word_count;
 word_count = strexplode(&result, astring, delimeter);
 ```
 
+* Simple compile example:
+
+```shell
+gcc -g0 -o {your_file_name} {your_file_name.c} strexplode.c
+```
+
 Reference ```strexplode_test.c``` as an example.
 
 ---
@@ -55,7 +61,7 @@ Reference ```strexplode_test.c``` as an example.
 ### Signature
 
 ```C
-int strexplode(**char, *char, *char)
+int strexplode(**char, char[], *char)
 ```
 
 ---

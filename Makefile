@@ -1,12 +1,16 @@
 CXX = gcc
-NAME = strexplode_test
-LONG_NAME = strexplode_longtest
+TEST = strexplode_test
+LONG_TEST = strexplode_longtest
+OBJ = strexplode.c
 
-all: compile compile_longtest run
+all: compile compile_long run
 
 compile:
-	$(CXX) $(NAME).c -o $(NAME)
-compile_longtest:
-	$(CXX) $(LONG_NAME).c -o $(LONG_NAME)
+	@$(CXX) -g0 -o $(TEST) $(TEST).c $(OBJ)
+
+compile_long:
+	@$(CXX) -g0 -o $(LONG_TEST) $(LONG_TEST).c $(OBJ)
+
 run:
-	./$(NAME)
+	./$(TEST)
+
