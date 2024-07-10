@@ -1,6 +1,11 @@
 #include <stdio.h>
 #include "strexplode.h"
 
+void cr_to_continue() {
+    printf("\nhit <CR> to continue > ");
+    int ch = getchar();
+}
+
 int main(void) {
     char** result_array;    // resulting array of elements
     int element_count;      // resulting number of elements
@@ -22,6 +27,7 @@ int main(void) {
         printf("[%d] `%s`\n", i, result_array[i]);
     }
 
+    cr_to_continue();
 
     // ========== part 2 ===========
     // show comma separated to array
@@ -38,6 +44,8 @@ int main(void) {
     for(int i=0; i < element_count; i++){
         printf("[%d] `%s`\n", i, result_array[i]);
     }
+
+    cr_to_continue();
 
     // =========== part 3 =============
     // show multiple delimiters process
